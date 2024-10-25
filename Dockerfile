@@ -1,6 +1,13 @@
 # Start with a base image containing Python runtime
 FROM python:3.10-slim
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    solc \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -20,4 +27,4 @@ EXPOSE 4000
 ENV NAME=World
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python", "src/app.py"]
