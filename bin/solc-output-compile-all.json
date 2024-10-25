@@ -1,0 +1,363 @@
+{
+    "contracts": {
+        "c:/Users/elagg/Documents/Personal/Portfolio/Projects/Cybersecurity_projects/Blockchain-SmartContracts/contracts/contract.sol": {
+            "MyContract": {
+                "abi": [
+                    {
+                        "inputs": [],
+                        "name": "get",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "x",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "set",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }
+                ],
+                "devdoc": {
+                    "kind": "dev",
+                    "methods": {},
+                    "version": 1
+                },
+                "evm": {
+                    "bytecode": {
+                        "functionDebugData": {},
+                        "generatedSources": [],
+                        "linkReferences": {},
+                        "object": "608080604052346013576094908160188239f35b5f80fdfe60808060405260043610156011575f80fd5b5f3560e01c806360fe47b114604857636d4ce63c14602d575f80fd5b346044575f3660031901126044576020905f548152f35b5f80fd5b3460445760203660031901126044576004355f5500fea26469706673582212209bb2dee34d3fd4ae96e858b54cd40e40a9453dffe737b29bb852542324921b2d64736f6c634300081c0033",
+                        "opcodes": "PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE CALLVALUE PUSH1 0x13 JUMPI PUSH1 0x94 SWAP1 DUP2 PUSH1 0x18 DUP3 CODECOPY RETURN JUMPDEST PUSH0 DUP1 REVERT INVALID PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH1 0x11 JUMPI PUSH0 DUP1 REVERT JUMPDEST PUSH0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x60FE47B1 EQ PUSH1 0x48 JUMPI PUSH4 0x6D4CE63C EQ PUSH1 0x2D JUMPI PUSH0 DUP1 REVERT JUMPDEST CALLVALUE PUSH1 0x44 JUMPI PUSH0 CALLDATASIZE PUSH1 0x3 NOT ADD SLT PUSH1 0x44 JUMPI PUSH1 0x20 SWAP1 PUSH0 SLOAD DUP2 MSTORE RETURN JUMPDEST PUSH0 DUP1 REVERT JUMPDEST CALLVALUE PUSH1 0x44 JUMPI PUSH1 0x20 CALLDATASIZE PUSH1 0x3 NOT ADD SLT PUSH1 0x44 JUMPI PUSH1 0x4 CALLDATALOAD PUSH0 SSTORE STOP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP12 0xB2 0xDE 0xE3 0x4D EXTCODEHASH 0xD4 0xAE SWAP7 0xE8 PC 0xB5 0x4C 0xD4 0xE BLOCKHASH 0xA9 GASLIMIT RETURNDATASIZE SELFDESTRUCT 0xE7 CALLDATACOPY 0xB2 SWAP12 0xB8 MSTORE SLOAD 0x23 0x24 SWAP3 SHL 0x2D PUSH5 0x736F6C6343 STOP ADDMOD SHR STOP CALLER ",
+                        "sourceMap": "60:201:0:-:0;;;;;;;;;;;;;;;;;"
+                    },
+                    "deployedBytecode": {
+                        "functionDebugData": {},
+                        "generatedSources": [],
+                        "immutableReferences": {},
+                        "linkReferences": {},
+                        "object": "60808060405260043610156011575f80fd5b5f3560e01c806360fe47b114604857636d4ce63c14602d575f80fd5b346044575f3660031901126044576020905f548152f35b5f80fd5b3460445760203660031901126044576004355f5500fea26469706673582212209bb2dee34d3fd4ae96e858b54cd40e40a9453dffe737b29bb852542324921b2d64736f6c634300081c0033",
+                        "opcodes": "PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH1 0x11 JUMPI PUSH0 DUP1 REVERT JUMPDEST PUSH0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x60FE47B1 EQ PUSH1 0x48 JUMPI PUSH4 0x6D4CE63C EQ PUSH1 0x2D JUMPI PUSH0 DUP1 REVERT JUMPDEST CALLVALUE PUSH1 0x44 JUMPI PUSH0 CALLDATASIZE PUSH1 0x3 NOT ADD SLT PUSH1 0x44 JUMPI PUSH1 0x20 SWAP1 PUSH0 SLOAD DUP2 MSTORE RETURN JUMPDEST PUSH0 DUP1 REVERT JUMPDEST CALLVALUE PUSH1 0x44 JUMPI PUSH1 0x20 CALLDATASIZE PUSH1 0x3 NOT ADD SLT PUSH1 0x44 JUMPI PUSH1 0x4 CALLDATALOAD PUSH0 SSTORE STOP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP12 0xB2 0xDE 0xE3 0x4D EXTCODEHASH 0xD4 0xAE SWAP7 0xE8 PC 0xB5 0x4C 0xD4 0xE BLOCKHASH 0xA9 GASLIMIT RETURNDATASIZE SELFDESTRUCT 0xE7 CALLDATACOPY 0xB2 SWAP12 0xB8 MSTORE SLOAD 0x23 0x24 SWAP3 SHL 0x2D PUSH5 0x736F6C6343 STOP ADDMOD SHR STOP CALLER ",
+                        "sourceMap": "60:201:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;60:201:0;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;60:201:0;;;;;;;;"
+                    },
+                    "gasEstimates": {
+                        "creation": {
+                            "codeDepositCost": "29600",
+                            "executionCost": "87",
+                            "totalCost": "29687"
+                        },
+                        "external": {
+                            "get()": "2263",
+                            "set(uint256)": "22233"
+                        }
+                    },
+                    "methodIdentifiers": {
+                        "get()": "6d4ce63c",
+                        "set(uint256)": "60fe47b1"
+                    }
+                },
+                "metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/elagg/Documents/Personal/Portfolio/Projects/Cybersecurity_projects/Blockchain-SmartContracts/contracts/contract.sol\":\"MyContract\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"c:/Users/elagg/Documents/Personal/Portfolio/Projects/Cybersecurity_projects/Blockchain-SmartContracts/contracts/contract.sol\":{\"keccak256\":\"0x3b3946304f84eb1c0b016ef6bc25238e7afc8e7bcd50610552aa4baafcf55486\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://51d6d9823aefec4f103f3368f237cb4921990d763ddf43b4091dcafc34d88890\",\"dweb:/ipfs/QmSNLFrpy2bVu7AR2YbJ1jiJPECt2Sgaj54ucPARFwTwhw\"]}},\"version\":1}",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 3,
+                            "contract": "c:/Users/elagg/Documents/Personal/Portfolio/Projects/Cybersecurity_projects/Blockchain-SmartContracts/contracts/contract.sol:MyContract",
+                            "label": "storedData",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "userdoc": {
+                    "kind": "user",
+                    "methods": {},
+                    "version": 1
+                }
+            }
+        }
+    },
+    "sources": {
+        "c:/Users/elagg/Documents/Personal/Portfolio/Projects/Cybersecurity_projects/Blockchain-SmartContracts/contracts/contract.sol": {
+            "ast": {
+                "absolutePath": "c:/Users/elagg/Documents/Personal/Portfolio/Projects/Cybersecurity_projects/Blockchain-SmartContracts/contracts/contract.sol",
+                "exportedSymbols": {
+                    "MyContract": [
+                        22
+                    ]
+                },
+                "id": 23,
+                "license": "MIT",
+                "nodeType": "SourceUnit",
+                "nodes": [
+                    {
+                        "id": 1,
+                        "literals": [
+                            "solidity",
+                            "^",
+                            "0.8",
+                            ".0"
+                        ],
+                        "nodeType": "PragmaDirective",
+                        "src": "33:23:0"
+                    },
+                    {
+                        "abstract": false,
+                        "baseContracts": [],
+                        "canonicalName": "MyContract",
+                        "contractDependencies": [],
+                        "contractKind": "contract",
+                        "fullyImplemented": true,
+                        "id": 22,
+                        "linearizedBaseContracts": [
+                            22
+                        ],
+                        "name": "MyContract",
+                        "nameLocation": "69:10:0",
+                        "nodeType": "ContractDefinition",
+                        "nodes": [
+                            {
+                                "constant": false,
+                                "id": 3,
+                                "mutability": "mutable",
+                                "name": "storedData",
+                                "nameLocation": "92:10:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 22,
+                                "src": "87:15:0",
+                                "stateVariable": true,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 2,
+                                    "name": "uint",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "87:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "body": {
+                                    "id": 12,
+                                    "nodeType": "Block",
+                                    "src": "139:33:0",
+                                    "statements": [
+                                        {
+                                            "expression": {
+                                                "id": 10,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftHandSide": {
+                                                    "id": 8,
+                                                    "name": "storedData",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 3,
+                                                    "src": "150:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "Assignment",
+                                                "operator": "=",
+                                                "rightHandSide": {
+                                                    "id": 9,
+                                                    "name": "x",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 5,
+                                                    "src": "163:1:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "src": "150:14:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "id": 11,
+                                            "nodeType": "ExpressionStatement",
+                                            "src": "150:14:0"
+                                        }
+                                    ]
+                                },
+                                "functionSelector": "60fe47b1",
+                                "id": 13,
+                                "implemented": true,
+                                "kind": "function",
+                                "modifiers": [],
+                                "name": "set",
+                                "nameLocation": "120:3:0",
+                                "nodeType": "FunctionDefinition",
+                                "parameters": {
+                                    "id": 6,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [
+                                        {
+                                            "constant": false,
+                                            "id": 5,
+                                            "mutability": "mutable",
+                                            "name": "x",
+                                            "nameLocation": "129:1:0",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 13,
+                                            "src": "124:6:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 4,
+                                                "name": "uint",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "124:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "src": "123:8:0"
+                                },
+                                "returnParameters": {
+                                    "id": 7,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [],
+                                    "src": "139:0:0"
+                                },
+                                "scope": 22,
+                                "src": "111:61:0",
+                                "stateMutability": "nonpayable",
+                                "virtual": false,
+                                "visibility": "public"
+                            },
+                            {
+                                "body": {
+                                    "id": 20,
+                                    "nodeType": "Block",
+                                    "src": "222:36:0",
+                                    "statements": [
+                                        {
+                                            "expression": {
+                                                "id": 18,
+                                                "name": "storedData",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 3,
+                                                "src": "240:10:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "functionReturnParameters": 17,
+                                            "id": 19,
+                                            "nodeType": "Return",
+                                            "src": "233:17:0"
+                                        }
+                                    ]
+                                },
+                                "functionSelector": "6d4ce63c",
+                                "id": 21,
+                                "implemented": true,
+                                "kind": "function",
+                                "modifiers": [],
+                                "name": "get",
+                                "nameLocation": "189:3:0",
+                                "nodeType": "FunctionDefinition",
+                                "parameters": {
+                                    "id": 14,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [],
+                                    "src": "192:2:0"
+                                },
+                                "returnParameters": {
+                                    "id": 17,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [
+                                        {
+                                            "constant": false,
+                                            "id": 16,
+                                            "mutability": "mutable",
+                                            "name": "",
+                                            "nameLocation": "-1:-1:-1",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 21,
+                                            "src": "216:4:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 15,
+                                                "name": "uint",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "216:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "src": "215:6:0"
+                                },
+                                "scope": 22,
+                                "src": "180:78:0",
+                                "stateMutability": "view",
+                                "virtual": false,
+                                "visibility": "public"
+                            }
+                        ],
+                        "scope": 23,
+                        "src": "60:201:0",
+                        "usedErrors": [],
+                        "usedEvents": []
+                    }
+                ],
+                "src": "33:230:0"
+            },
+            "id": 0
+        }
+    }
+}
