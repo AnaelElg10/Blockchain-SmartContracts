@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   app:
     build: .
@@ -11,7 +10,6 @@ services:
       - .:/app
     depends_on:
       - ganache
-
   ganache:
     image: trufflesuite/ganache-cli
     ports:
