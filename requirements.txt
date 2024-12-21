@@ -1,3 +1,0 @@
-cython
-web3>=5.25.0,<8
-eth-brownie>=1.17.1
