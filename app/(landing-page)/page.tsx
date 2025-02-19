@@ -1,17 +1,20 @@
 "use client";
 
-import React from "react";
 import Navbar from "@/components/navbar/navbar";
-import Footer from '@/components/footer';
+import React from "react";
+import HeroSection from "./hero-section";
+import Section from "./sections";
 
-const LandingPage: React.FC = () => {
-  // return (
-  //   <main className="landing-page">
-  //     <Navbar />
-  //     {/* <HeroSection />
-  //     <Section /> */}
-  //   </main>
-  // );
+const LandingPage = () => {
+  return <div>
+    {/* navbar */}
+    <Navbar />
+    <HeroSection/>
+    <Section/>
+    {/* herosection */}
+    {/* section */}
+
+  </div>
 
   
 };
