@@ -1,11 +1,19 @@
+"use client";
+
 import React from "react";
+import Navbar from "@/components/navbar/navbar";
+import Footer from '@/components/footer';
 
-const LanidngPage = () => {
-    return (
-        <div>
-        <h1> Welcome to the landing page</h1>
-        </div>
-    );
-    };
+const LandingPage: React.FC = () => {
+  // return (
+  //   <main className="landing-page">
+  //     <Navbar />
+  //     {/* <HeroSection />
+  //     <Section /> */}
+  //   </main>
+  // );
 
-export default LanidngPage;
+  
+};
+
+export default LandingPage;
