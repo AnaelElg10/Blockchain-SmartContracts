@@ -26,25 +26,25 @@ To learn how to create a client ID, refer to the [client documentation](https://
 Install dependencies
 
 ```bash
-yarn
+npm install
 ```
 
 Start development server
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 Create a production build
 
 ```bash
-yarn build
+npm run build
 ```
 
 Preview the production build
 
 ```bash
-yarn start
+npm start
 ```
 
 ## Resources
