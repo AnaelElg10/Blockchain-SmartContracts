@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "@public/thirdweb.svg";
 import Link from "next/link";
 import { ConnectButton, lightTheme, useActiveAccount } from "thirdweb/react";
-import { client } from "../client";
+import { client, isClientConfigured } from "../client";
 import { Twirl as Hamburger } from "hamburger-react"; 
 import { createWallet } from "thirdweb/wallets";
 import { sepolia } from "thirdweb/chains";
@@ -77,19 +77,23 @@ const Navbar = () => {
 
           {/* Connect Wallet Button (Hidden on Mobile) */}
           <div className="hidden sm:block">
-            <ConnectButton 
-              client={client}
-              wallets={[
-                createWallet("io.metamask"),
-                createWallet("com.coinbase.wallet"),
-                createWallet("me.rainbow"),
-              ]}
-              chain={sepolia}
-              theme={lightTheme()}
-              detailsButton={{
-                style: { maxHeight: "50px" }
-              }}
-            />
+            {isClientConfigured && client ? (
+              <ConnectButton 
+                client={client}
+                wallets={[
+                  createWallet("io.metamask"),
+                  createWallet("com.coinbase.wallet"),
+                  createWallet("me.rainbow"),
+                ]}
+                chain={sepolia}
+                theme={lightTheme()}
+                detailsButton={{
+                  style: { maxHeight: "50px" }
+                }}
+              />
+            ) : (
+              <p className="text-xs text-red-600">Wallet config missing</p>
+            )}
           </div>
         </div>
       </div>
@@ -123,13 +127,17 @@ const Navbar = () => {
           )}
           {/* Connect Wallet Button (Shown in Mobile Menu) */}
           <li className="mt-3">
-            <ConnectButton 
-              client={client}
-              theme={lightTheme()}
-              detailsButton={{
-                style: { maxHeight: "50px",}
-              }}
-            />
+            {isClientConfigured && client ? (
+              <ConnectButton 
+                client={client}
+                theme={lightTheme()}
+                detailsButton={{
+                  style: { maxHeight: "50px",}
+                }}
+              />
+            ) : (
+              <p className="text-xs text-red-600 text-center">Wallet config missing</p>
+            )}
           </li>
         </ul>
       )}

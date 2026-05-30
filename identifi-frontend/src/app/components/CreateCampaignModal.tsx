@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ThirdwebContract } from "thirdweb";
 import { deployPublishedContract } from "thirdweb/deploys";
 import { useActiveAccount } from "thirdweb/react";
-import { client } from "../client";
+import { client, isClientConfigured } from "../client";
 import { sepolia } from "thirdweb/chains";
 import { useFeedback } from "../context/feadback";
 
@@ -58,12 +58,26 @@ const CreateCampaignModal = ({ setIsModalOpen, contract , setIsCreated}: CreateC
 
   const handleDeployContract = async () => {
     if (!validateFields()) return; 
+    if (!isClientConfigured || !client) {
+      setFeedback({ message: "Missing wallet client configuration.", type: "error" });
+      return;
+    }
+    if (!account) {
+      setFeedback({ message: "Connect your wallet before deploying.", type: "error" });
+      return;
+    }
+    const publisher = process.env.NEXT_PUBLIC_TEMPLATE_PUBLISHER_CONTRACT_ADDRESS;
+    const version = process.env.NEXT_PUBLIC_TEMPLATE_PUBLISHER_CONTRACT_VERSION;
+    if (!publisher || !version) {
+      setFeedback({ message: "Missing publisher contract configuration.", type: "error" });
+      return;
+    }
     setIsDeployingContract(true);
     try {
       const contractAddress = await deployPublishedContract({
         client: client,
         chain: sepolia,
-        account: account!,
+        account,
         contractId: "CrowdFunding",
         contractParams: {
           _name: campaignName, 
@@ -71,8 +85,8 @@ const CreateCampaignModal = ({ setIsModalOpen, contract , setIsCreated}: CreateC
           _goal: campaignGoal,
           _durationInDays: BigInt(campaignDuration),
         },
-        publisher: process.env.NEXT_PUBLIC_TEMPLATE_PUBLISHER_CONTRACT_ADDRESS as string,
-        version: process.env.NEXT_PUBLIC_TEMPLATE_PUBLISHER_CONTRACT_VERSION as string,
+        publisher,
+        version,
       });
       setFeedback({message:`Campaign created successfully at ${contractAddress}`, type: "success"});
       setIsModalOpen(false);

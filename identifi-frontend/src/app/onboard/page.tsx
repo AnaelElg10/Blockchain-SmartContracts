@@ -1,28 +1,25 @@
 "use client";
-
-import { useState } from "react";
 import { getContract, prepareContractCall } from "thirdweb";
 import { TransactionButton } from "thirdweb/react";
 import { sepolia } from "thirdweb/chains";
-import { client } from "../client";
+import { client, isClientConfigured } from "../client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BasicInfo, ProfessionalInfo, SocialMedia, userIdentityInfo, userIdentitySchema, Visibility } from "../utils/types";
 import InputUI from "../components/InputUI";
 import { useFeedback } from "@/app/context/feadback";
 
-const DEFAULT_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000";
 const contractAddress =
   process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_ADDRESS ??
-  process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_address ??
-  DEFAULT_CONTRACT_ADDRESS;
+  process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_address;
 
-const CreateIdentityModal = () => {
+const CreateIdentityForm = ({ contractAddress }: { contractAddress: string }) => {
   const { setFeedback } = useFeedback();
+  const activeClient = client as NonNullable<typeof client>;
 
   // Récupération du contrat IdentiFi
   const contract = getContract({
-    client,
+    client: activeClient,
     chain: sepolia,
     address: contractAddress,
   });
@@ -196,6 +193,22 @@ const CreateIdentityModal = () => {
       </div>
     </div>
   );
+};
+
+const CreateIdentityModal = () => {
+  if (!isClientConfigured || !client || !contractAddress) {
+    return (
+      <div className="w-full mt-10">
+        <div className="bg-white p-4 rounded-md shadow-lg">
+          <p className="text-red-600 font-medium text-center">
+            Missing wallet or contract configuration.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return <CreateIdentityForm contractAddress={contractAddress} />;
 };
 
 export default CreateIdentityModal;
