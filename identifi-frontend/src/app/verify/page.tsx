@@ -8,12 +8,18 @@ import { getContract } from "thirdweb";
 import { client } from "../client";
 import { sepolia } from "thirdweb/chains";
 
+const DEFAULT_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000";
+const contractAddress =
+  process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_ADDRESS ??
+  process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_address ??
+  DEFAULT_CONTRACT_ADDRESS;
+
 export default function Verify() {
   // Load IdentiFi contract
   const contract = getContract({
     client,
     chain: sepolia,
-    address: process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_address as string,
+    address: contractAddress,
   });
 
   const [username, setUsername] = useState("");

@@ -11,6 +11,11 @@ import { BasicInfo, ProfessionalInfo, SocialMedia, userIdentityInfo, userIdentit
 import InputUI from "../components/InputUI";
 import { useFeedback } from "@/app/context/feadback";
 
+const DEFAULT_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000";
+const contractAddress =
+  process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_ADDRESS ??
+  process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_address ??
+  DEFAULT_CONTRACT_ADDRESS;
 
 const CreateIdentityModal = () => {
   const { setFeedback } = useFeedback();
@@ -19,7 +24,7 @@ const CreateIdentityModal = () => {
   const contract = getContract({
     client,
     chain: sepolia,
-    address: process.env.NEXT_PUBLIC_TEMPLATE_CONTRACT_address as string,
+    address: contractAddress,
   });
 
   const {
