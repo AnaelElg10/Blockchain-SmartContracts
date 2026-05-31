@@ -1,11 +1,12 @@
-import { FieldError, FieldValues, UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
+import { FieldError, UseFormRegisterReturn } from "react-hook-form";
+import { InputHTMLAttributes } from "react";
 
 type inputProps = {
   id : string;
   type : string;
   labelText : string;
   error?: FieldError;
-  register : UseFormRegisterReturn
+  register : UseFormRegisterReturn | InputHTMLAttributes<HTMLInputElement>
 }
 
 function InputUI ({id,type,labelText,error,register} : inputProps) {
